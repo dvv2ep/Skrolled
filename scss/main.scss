@@ -1,0 +1,13 @@
+/* vendor imports */
+@import "./vendors/fonts.scss", "./vendors/bootstrap", "./vendors/aos.scss",
+  "./vendors/splide";
+/* basics import */
+@import "./abstract/variables", "./themes/color.scss", "./defaults/reset",
+  "./abstract/mixins", "./abstract/animation", "./defaults/basic";
+/* components imports */
+@import "./layouts/footer", "./components/background_bubble.scss",
+  "./components/loader.scss", "./layouts/header", "./layouts/navigation",
+  "./components/button", "./components/card";
+
+/* pages */
+@import "./page/index.scss";

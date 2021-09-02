@@ -1,0 +1,82 @@
+.default_button {
+  pointer-events: auto;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  background: none;
+  padding: 0;
+  .button::before,
+  .button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: 2px solid #443ffc;
+    outline-offset: 3px;
+  }
+  .button__bg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+    }
+    &::before {
+      width: 110%;
+      height: 0;
+      padding-bottom: 110%;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
+    }
+    &::after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+  &:hover {
+    .button__bg {
+      transform: scale3d(1.2, 1.2, 1);
+      &::before {
+        transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+        transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+      }
+      &::after {
+        opacity: 1;
+        transition-duration: 0.01s;
+        transition-delay: 0.3s;
+      }
+    }
+  }
+  span {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 15px 25px;
+  }
+}

@@ -1,0 +1,36 @@
+body {
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--primary);
+  box-sizing: border-box;
+}
+/* body::-webkit-scrollbar {
+  display: none;
+} */
+//cannot copy any things
+.copy-text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.text-center {
+  text-align: center;
+}
+.fadeIn {
+  @include animation(fadeIn, 0.3s, ease-in-out, 1);
+}
+.fadeOut {
+  opacity: 0;
+  @include transition(all, 0.5s, ease-in-out);
+}
+.normal_text {
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
